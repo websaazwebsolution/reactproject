@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>JS Css</title>
+    <link  id="csslink" rel="stylesheet" href="lite.css"/>
+    <style>
+        #myDiv{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 100px;
+
+        }
+        .btn1{
+            background-color: blue;
+            color: blue;
+            border: none;
+            border-radius: 20px;
+        }
+        .btn2{
+            background-color: red;
+            color:red;
+            border: none;
+            border-radius: 20px;
+        }
+        /* #body{
+            background-color: black;
+            color:white;
+        } */
+
+    </style>
+</head>
+<body id="body">
+    <h1>Theme</h1>
+    <div id="myDiv"></div>
+    <button class="btn1" onclick="changColorBlue()">Blue</button>
+    <button class="btn2" onclick="changColorRed()">Red</button>
+    <br>
+    <button  onclick="lite()">lite</button>
+    <button  onclick="dark()">Dark</button>
+    <br>
+    <button  onclick="toggle()">Show/hide</button>
+    <br>
+    <button onclick="changecss()">Change css</button>
+
+<script>
+
+    function changecss(){
+        let link = document.getElementById("csslink");
+        if(link.getAttribute("href") === "lite.css"){
+            link.setAttribute("href", "dark.css");
+        }else{
+            link.setAttribute("href", "lite.css");
+        }
+    }
+
+    function toggle(){
+        let div = document.getElementById("myDiv");
+        if(div.style.display === "none"){
+            div.style.display = "block";
+        }else{
+            div.style.display = "none";
+        }
+    }
+
+
+    function changColorBlue(){
+        let box = document.getElementById("myDiv");
+        box.style.backgroundColor ="blue";
+        box.style.borderRadius = "0px"
+
+        console.log("hello")
+    }
+    function changColorRed(){
+        let box = document.getElementById("myDiv");
+        box.style.backgroundColor ="red";
+        box.style.borderRadius = "50px"
+
+        console.log("hello")
+    }
+
+    function lite(){
+        let mybody = document.getElementById("body");
+        mybody.style.backgroundColor = "white";
+        mybody.style.color = "black"
+    }
+
+    function dark(){
+        let mybody = document.getElementById("body");
+        mybody.style.backgroundColor = "black";
+        mybody.style.color = "white"
+    }
+</script>
+</body>
+</html>
